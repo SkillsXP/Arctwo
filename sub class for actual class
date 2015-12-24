@@ -1,0 +1,19 @@
+//sub class
+package cornellNotes;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class drawingNotes extends JPanel{
+	public void paint(){
+		repaint();
+	}
+	public void paintComponent(Graphics g){
+		super.paintComponents(g);
+		this.setBackground(Color.white);
+		g.setColor(Color.BLACK);
+		g.drawRect(10, 10, 450, 450);
+		g.drawLine(10, 40, 460, 40);
+		g.drawString("Note Title", 200, 30);
+		g.drawLine(100, 40, 100, 460);
+	}
+}
