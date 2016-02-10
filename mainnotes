@@ -1,0 +1,27 @@
+package com.example.bluejay.cornellnotes;
+
+import android.app.Activity;
+import android.os.Bundle;
+import java.io.FileOutputStream;
+import android.content.Context;
+
+
+/**
+ * Created by bluejay on 1/25/16.
+ */
+public class mainNotes extends Activity {
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        String FILENAME = this.getTitle().toString();
+        String string = "hello world";
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            fos.write(string.getBytes());
+            fos.close();
+        }
+        catch (java.io.IOException i) {
+            System.out.print("IO exception");
+        }
+    }
+}
